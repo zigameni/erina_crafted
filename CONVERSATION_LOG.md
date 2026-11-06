@@ -21,3 +21,13 @@ Make Albanian the default language.
 - Verified: `/` renders Albanian — `lang="sq"`, Albanian title, canonical `/`, alternates sq `/` and en `/en`, header switch to `/en` labelled English; `/en` renders English with the mirrored metadata and a switch back to `/` labelled Shqip; `/sq` → 308 to `/`; anonymous `/zg-admin/content` still 307s to sign-in; saved both documents from the editor, each wrote its own JSON file and redirected to `?lang=<locale>&saved=1`; `bun run lint` and `bun run build` clean with routes `/` and `/en`.
 - Not verified: nothing new is unverified beyond the standing reduced-motion caveat.
 - Next: real copy and photography, then a commit.
+
+## 2026-11-06 22:55
+### USER
+Commit the bilingual site, admin content editor and Albanian-default routing; no co-authors.
+
+### ASSISTANT
+- Committed as `abe4589` — 25 files: the bilingual home (Albanian `/`, English `/en`), `lib/content.ts` and the two content documents, the guarded `/zg-admin/content` editor with its save action and image upload endpoint, the home components and stylesheet, the `/sq` redirect, the admin-path header in `proxy.ts`, `<html lang="sq">`, and the conversation archives.
+- Message body carries only the user's configured identity — no trailers or attribution, per AGENTS.md.
+- `prototypes/` was deliberately left untracked (design explorations, not shipped code); `.env.local` and `public/uploads/` are untracked.
+- Next: decide whether the prototypes belong in the repo, then real copy and photography.
