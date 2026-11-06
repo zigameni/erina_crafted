@@ -1,0 +1,172 @@
+{
+  "locale": "en",
+  "meta": {
+    "title": "Erina Crafted — Interior Craftsmanship",
+    "description": "Erina Crafted makes custom interior elements — joinery, panelling, fitted kitchens and furniture — for rooms that ask for something considered."
+  },
+  "brand": {
+    "name": "Erina",
+    "sub": "Crafted"
+  },
+  "nav": [
+    {
+      "href": "#work",
+      "label": "Work"
+    },
+    {
+      "href": "#services",
+      "label": "Services"
+    },
+    {
+      "href": "#studio",
+      "label": "Studio"
+    },
+    {
+      "href": "#contact",
+      "label": "Contact"
+    }
+  ],
+  "header": {
+    "instagramLabel": "Instagram",
+    "cta": "Enquire"
+  },
+  "langLink": {
+    "href": "/",
+    "label": "Shqip",
+    "hreflang": "sq"
+  },
+  "hero": {
+    "eyebrow": "Interior craftsmanship · Custom interiors",
+    "title": {
+      "line1": "Spaces shaped by hand,",
+      "line2Before": "finished with",
+      "emphasis": "restraint",
+      "line2After": "."
+    },
+    "lede": "Erina Crafted makes custom interior elements — joinery, panelling, fitted kitchens and furniture — for rooms that ask for something considered.",
+    "cta": "View selected work",
+    "footMeta": "Bespoke interiors · Made to measure",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80",
+      "alt": "Warm timber living room with a full-height wood feature wall and large windows"
+    }
+  },
+  "intro": {
+    "label": "The practice",
+    "heading": "We work closely with a small number of homes at a time, drawing, making and fitting each piece to the room it belongs to.",
+    "body": "Everything begins with the space: where the light falls, how a door opens, what the room is for. From there we develop details in timber, stone and metal — sampled, revised and made to measure.",
+    "fineprint": "Placeholder studio copy. Replace with Erina Crafted’s own story and process."
+  },
+  "services": {
+    "label": "What we make",
+    "heading": "A quiet range of custom interior work.",
+    "caption": "Materials and detail, in progress",
+    "items": [
+      {
+        "title": "Bespoke joinery",
+        "copy": "Shelving, cabinetry and built-ins designed around the room rather than the aisle.",
+        "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=75",
+        "alt": "Built-in shelving in warm timber"
+      },
+      {
+        "title": "Kitchens & wardrobes",
+        "copy": "Fitted rooms with made-to-measure fronts, internal planning and considered hardware.",
+        "image": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1000&q=75",
+        "alt": "Fitted kitchen with made-to-measure fronts"
+      },
+      {
+        "title": "Wall panelling",
+        "copy": "Slatted timber, fluted profiles and solid surfaces that give a wall depth and rhythm.",
+        "image": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=75",
+        "alt": "Slatted timber wall panelling"
+      },
+      {
+        "title": "Furniture & fit-out",
+        "copy": "One-off pieces and full interior fit-outs, coordinated with the trades on site.",
+        "image": "https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=1000&q=75",
+        "alt": "One-off furniture in a finished interior"
+      }
+    ]
+  },
+  "work": {
+    "label": "Selected work",
+    "heading": "Rooms, resolved in detail.",
+    "note": "Project names, locations and photography are placeholders for now.",
+    "items": [
+      {
+        "name": "Placeholder commission — Fitted joinery",
+        "meta": "Oak · 2024",
+        "alt": "Dining space framed by a timber slatted wall and a dark steel stair",
+        "image": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=75",
+        "portrait": false
+      },
+      {
+        "name": "Placeholder commission — Interior fit-out",
+        "meta": "Stone · 2024",
+        "alt": "Dark, pared-back bathroom with a freestanding tub and a wide horizontal window",
+        "image": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=75",
+        "portrait": true
+      },
+      {
+        "name": "Placeholder commission — Panelling & furniture",
+        "meta": "Lime plaster · 2025",
+        "alt": "Softly lit living room with a low sofa, framed artwork and a slim brass floor lamp",
+        "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=75",
+        "portrait": false
+      }
+    ]
+  },
+  "studio": {
+    "label": "The studio",
+    "heading": {
+      "before": "Made slowly,",
+      "emphasis": "measured twice",
+      "after": ", and fitted by the people who drew it."
+    },
+    "body": "Erina Crafted is an interior craftsmanship practice working on custom solutions for residential interiors. The work sits between design and making: drawings developed with the client, samples made in the workshop, and installation handled with care for the finished room.",
+    "caption": "Detail study — placeholder image",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?auto=format&fit=crop&w=1200&q=75",
+      "alt": "Timber-clad extension with full-height glazing opening onto a terrace and pool"
+    },
+    "materials": [
+      {
+        "name": "Oak & ash",
+        "swatch": "#b98b5e"
+      },
+      {
+        "name": "Walnut",
+        "swatch": "#4a3728"
+      },
+      {
+        "name": "Limestone",
+        "swatch": "#d8cbb8"
+      },
+      {
+        "name": "Brass",
+        "swatch": "#9c8459"
+      }
+    ],
+    "link": "Talk about a project"
+  },
+  "contact": {
+    "label": "Enquiries",
+    "title": {
+      "line1": "Tell us about",
+      "before": "the",
+      "emphasis": "space",
+      "line2After": "."
+    },
+    "lede": "Share a few lines about the room, the timeline and what you have in mind. We reply to every enquiry personally.",
+    "email": "hello@example.com",
+    "phone": "",
+    "location": "",
+    "instagramHandle": "@erina_crafted",
+    "instagramUrl": "https://www.instagram.com/erina_crafted/",
+    "fineprint": "Placeholder contact details — replace with the studio’s real email, phone and location."
+  },
+  "footer": {
+    "signIn": "Staff sign in",
+    "copyrightName": "Erina Crafted"
+  }
+}

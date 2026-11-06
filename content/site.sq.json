@@ -1,0 +1,172 @@
+{
+  "locale": "sq",
+  "meta": {
+    "title": "Erina Crafted — Mjeshtëri interieri",
+    "description": "Erina Crafted prodhon elemente interieri me porosi — mobilje të ndërtuara, panele, kuzhina të montuara dhe orendi — për hapësira që kërkojnë diçka të menduar."
+  },
+  "brand": {
+    "name": "Erina",
+    "sub": "Crafted"
+  },
+  "nav": [
+    {
+      "href": "#work",
+      "label": "Punimet"
+    },
+    {
+      "href": "#services",
+      "label": "Shërbimet"
+    },
+    {
+      "href": "#studio",
+      "label": "Studio"
+    },
+    {
+      "href": "#contact",
+      "label": "Kontakt"
+    }
+  ],
+  "header": {
+    "instagramLabel": "Instagram",
+    "cta": "Pyet"
+  },
+  "langLink": {
+    "href": "/en",
+    "label": "English",
+    "hreflang": "en"
+  },
+  "hero": {
+    "eyebrow": "Mjeshtëri interieri · Interierë me porosi",
+    "title": {
+      "line1": "Hapësira të formuara me dorë,",
+      "line2Before": "përfunduara me",
+      "emphasis": "maturi",
+      "line2After": "."
+    },
+    "lede": "Erina Crafted prodhon elemente interieri me porosi — mobilje të ndërtuara, panele, kuzhina të montuara dhe orendi — për dhoma që kërkojnë diçka të menduar.",
+    "cta": "Shiko punimet",
+    "footMeta": "Interierë me porosi · Sipas masës",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80",
+      "alt": "Dhomë ndenjeje me dru të ngrohtë, mur të plotë me dru dhe dritare të mëdha"
+    }
+  },
+  "intro": {
+    "label": "Praktika",
+    "heading": "Punojmë me pak shtëpi njëherësh, duke vizatuar, prodhuar dhe montuar çdo element për dhomën ku ai bën pjesë.",
+    "body": "Gjithçka nis nga hapësira: ku bie drita, si hapet dera, për çfarë shërben dhoma. Prej andej zhvillojmë detaje në dru, gur dhe metal — duke i provuar, rishikuar dhe prodhuar sipas masës.",
+    "fineprint": "Tekst provizor i studios. Zëvendësoje me historinë dhe procesin e Erina Crafted."
+  },
+  "services": {
+    "label": "Çfarë prodhojmë",
+    "heading": "Një gamë e qetë punimesh interieri me porosi.",
+    "caption": "Materiale dhe detaje, në punë",
+    "items": [
+      {
+        "title": "Mobilje të ndërtuara",
+        "copy": "Raftë, dollapë dhe elemente të integruara, të projektuara për dhomën dhe jo për raftet e dyqanit.",
+        "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=75",
+        "alt": "Raftë të integruar në dru të ngrohtë"
+      },
+      {
+        "title": "Kuzhina dhe garderoba",
+        "copy": "Hapësira të montuara me fronte sipas masës, planifikim të brendshëm dhe mekanizma të zgjedhur me kujdes.",
+        "image": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1000&q=75",
+        "alt": "Kuzhinë e montuar me fronte sipas masës"
+      },
+      {
+        "title": "Panele muri",
+        "copy": "Dru me shirita, profile të valëzuara dhe sipërfaqe masive që i japin murit thellësi dhe ritëm.",
+        "image": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=75",
+        "alt": "Panele muri prej druri me shirita"
+      },
+      {
+        "title": "Orendi dhe kompletime",
+        "copy": "Pjesë unike dhe kompletime të plota interieri, të koordinuara me zanatçinjtë në kantier.",
+        "image": "https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=1000&q=75",
+        "alt": "Orendi unike në një interier të përfunduar"
+      }
+    ]
+  },
+  "work": {
+    "label": "Punime të zgjedhura",
+    "heading": "Dhoma, të zgjidhura në detaj.",
+    "note": "Emrat e projekteve, vendndodhjet dhe fotografitë janë provizore.",
+    "items": [
+      {
+        "name": "Projekt provizor — Mobilje të montuara",
+        "meta": "Dushk · 2024",
+        "alt": "Hapësirë ngrënieje e kornizuar nga një mur druri me shirita dhe një shkallë çeliku",
+        "image": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=75",
+        "portrait": false
+      },
+      {
+        "name": "Projekt provizor — Kompletim interieri",
+        "meta": "Gur · 2024",
+        "alt": "Banjo e errët dhe minimale me vaskë të lirë dhe dritare të gjerë horizontale",
+        "image": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=75",
+        "portrait": true
+      },
+      {
+        "name": "Projekt provizor — Panele dhe orendi",
+        "meta": "Suva gëlqereje · 2025",
+        "alt": "Dhomë ndenjeje me dritë të butë, divan i ulët, vepër arti në kornizë dhe llambë e hollë bronzi",
+        "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=75",
+        "portrait": false
+      }
+    ]
+  },
+  "studio": {
+    "label": "Studio",
+    "heading": {
+      "before": "Bëhet ngadalë,",
+      "emphasis": "matet dy herë",
+      "after": ", dhe montohet nga ata që e vizatuan."
+    },
+    "body": "Erina Crafted është një praktikë mjeshtërie interieri që merret me zgjidhje me porosi për interierë banimi. Puna qëndron mes projektimit dhe prodhimit: vizatime të zhvilluara me klientin, mostra të bëra në punishte dhe montim i kujdesshëm në dhomën e përfunduar.",
+    "caption": "Studim detaji — imazh provizor",
+    "image": {
+      "src": "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?auto=format&fit=crop&w=1200&q=75",
+      "alt": "Zgjatim i veshur me dru me xham deri në tavan që hapet drejt një tarrace"
+    },
+    "materials": [
+      {
+        "name": "Dushk dhe frashër",
+        "swatch": "#b98b5e"
+      },
+      {
+        "name": "Arrë",
+        "swatch": "#4a3728"
+      },
+      {
+        "name": "Gur gëlqeror",
+        "swatch": "#d8cbb8"
+      },
+      {
+        "name": "Tunxh",
+        "swatch": "#9c8459"
+      }
+    ],
+    "link": "Bisedo për një projekt"
+  },
+  "contact": {
+    "label": "Kërkesa",
+    "title": {
+      "line1": "Na tregoni për",
+      "before": "",
+      "emphasis": "hapësirën",
+      "line2After": "."
+    },
+    "lede": "Shkruani disa rreshta për dhomën, afatin kohor dhe idetë tuaja. I përgjigjemi çdo kërkese personalisht.",
+    "email": "hello@example.com",
+    "phone": "",
+    "location": "",
+    "instagramHandle": "@erina_crafted",
+    "instagramUrl": "https://www.instagram.com/erina_crafted/",
+    "fineprint": "Të dhëna kontakti provizore — zëvendësoji me emailin, telefonin dhe vendndodhjen reale të studios."
+  },
+  "footer": {
+    "signIn": "Hyrje për stafin",
+    "copyrightName": "Erina Crafted"
+  }
+}

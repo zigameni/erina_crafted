@@ -39,7 +39,12 @@ export async function proxy(request: NextRequest) {
     return response;
   }
 
-  return NextResponse.next();
+  // The admin shell marks the current section in its nav; a server component
+  // cannot read the pathname, so the guard passes it along as a header.
+  const forwarded = new Headers(request.headers);
+  forwarded.set("x-admin-path", pathname);
+
+  return NextResponse.next({ request: { headers: forwarded } });
 }
 
 export const config = {

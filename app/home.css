@@ -1,0 +1,1202 @@
+/* ==========================================================================
+   Erina Crafted — concept 01 “Modern Luxury”
+   Ported from prototypes/erina-crafted/design-1-luxury/style.css.
+   Every rule is scoped to .erina so /zg-login and /zg-admin keep the dark
+   template theme and none of this leaks into them.
+   ========================================================================== */
+
+.erina {
+  --paper: #f6f1e9;
+  --paper-2: #ede4d7;
+  --cream: #fbf8f3;
+  --ink: #17130f;
+  --ink-soft: #2c251e;
+  --muted: #6b5e52;
+  --line: rgb(23 19 15 / 14%);
+  --line-light: rgb(251 248 243 / 22%);
+  --gold: #7a5b2f;
+
+  --font-display: var(--font-cormorant), "Times New Roman", serif;
+  --font-sans: var(--font-jost), "Helvetica Neue", Arial, sans-serif;
+
+  --pad: clamp(1.25rem, 4.2vw, 4rem);
+  --maxw: 82rem;
+  --section-y: clamp(4.5rem, 9vw, 9.5rem);
+
+  /* Strong curves — built-in easings are too weak to feel intentional. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  flex: 1;
+  color-scheme: light;
+  background: var(--paper);
+  color: var(--ink-soft);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.erina ::selection {
+  background: var(--gold);
+  color: var(--cream);
+}
+
+.erina :focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* ---------- layout helpers ---------- */
+
+.erina .wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+.erina .section {
+  padding-block: var(--section-y);
+  scroll-margin-top: 5rem;
+}
+
+.erina .skip {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--ink);
+  color: var(--cream);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: translateY(-200%);
+  transition: transform 200ms var(--ease-out);
+}
+
+.erina .skip:focus-visible {
+  transform: translateY(0);
+}
+
+/* ---------- type ---------- */
+
+.erina .label {
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.erina .label--light {
+  color: rgb(251 248 243 / 62%);
+}
+
+.erina .display {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.4vw, 3.15rem);
+  font-weight: 300;
+  line-height: 1.14;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.erina .display--sm {
+  font-size: clamp(1.6rem, 2.6vw, 2.35rem);
+  line-height: 1.2;
+}
+
+.erina .display em,
+.erina .contact__title em,
+.erina .hero__title em,
+.erina .studio__copy em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.erina .fineprint {
+  margin-top: 1.6rem;
+  max-width: 44ch;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+}
+
+.erina .fineprint--light {
+  color: rgb(251 248 243 / 45%);
+}
+
+/* ---------- buttons & links ---------- */
+
+.erina .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.65rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    background-color 220ms var(--ease-out),
+    color 220ms var(--ease-out),
+    border-color 220ms var(--ease-out),
+    transform 140ms var(--ease-out);
+}
+
+.erina .btn:active {
+  transform: scale(0.975);
+}
+
+.erina .btn--solid {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.erina .btn--line {
+  border: 1px solid currentColor;
+}
+
+.erina .btn--ghost {
+  border: 1px solid rgb(251 248 243 / 32%);
+  color: var(--cream);
+}
+
+.erina .btn--wide {
+  padding-inline: 2.1rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .erina .btn--solid:hover {
+    background: var(--gold);
+    color: var(--cream);
+  }
+
+  .erina .btn--line:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+  }
+
+  .erina .btn--ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+}
+
+.erina .link-quiet {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.erina .link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: border-color 240ms var(--ease-out), color 240ms var(--ease-out);
+}
+
+.erina .link-arrow span {
+  transition: transform 240ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .erina .link-arrow:hover {
+    border-color: var(--ink);
+  }
+
+  .erina .link-arrow:hover span {
+    transform: translateX(4px);
+  }
+}
+
+/* ---------- header ---------- */
+
+.erina .site-head {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  color: var(--cream);
+  transition:
+    background-color 320ms var(--ease-out),
+    color 320ms var(--ease-out),
+    box-shadow 320ms var(--ease-out);
+}
+
+.erina .site-head__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding: 1.35rem var(--pad);
+  transition: padding 320ms var(--ease-out);
+}
+
+.erina .site-head.is-scrolled {
+  background: rgb(246 241 233 / 92%);
+  color: var(--ink);
+  box-shadow: 0 1px 0 var(--line);
+  backdrop-filter: blur(14px);
+}
+
+.erina .site-head.is-scrolled .site-head__inner {
+  padding-block: 0.85rem;
+}
+
+.erina .wordmark {
+  display: grid;
+  line-height: 1;
+}
+
+.erina .wordmark__name {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.erina .wordmark__sub {
+  margin-top: 0.22rem;
+  font-size: 0.52rem;
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.erina .nav {
+  display: flex;
+  gap: clamp(1.4rem, 2.6vw, 2.6rem);
+}
+
+.erina .nav a {
+  position: relative;
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  padding-block: 0.3rem;
+}
+
+.erina .nav a::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 280ms var(--ease-out);
+}
+
+.erina .site-head__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* The language switch stays reachable on phones, where the other quiet links
+   are hidden behind the menu. */
+@media (max-width: 56rem) {
+  .erina .site-head__actions .link-quiet.lang-switch {
+    display: inline-flex;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .erina .nav a:hover::after {
+    transform: scaleX(1);
+  }
+
+  .erina .link-quiet:hover {
+    color: var(--gold);
+  }
+}
+
+.erina .menu-btn {
+  display: none;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.4rem 0;
+}
+
+.erina .menu-btn__label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.erina .menu-btn__bars {
+  display: grid;
+  gap: 5px;
+  width: 22px;
+}
+
+.erina .menu-btn__bars i {
+  display: block;
+  height: 1px;
+  background: currentColor;
+  transition: transform 260ms var(--ease-out), opacity 200ms var(--ease-out);
+}
+
+.erina .menu-btn[aria-expanded="true"] .menu-btn__bars i:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.erina .menu-btn[aria-expanded="true"] .menu-btn__bars i:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+/* ---------- mobile menu ---------- */
+
+.erina .mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 2rem;
+  padding: 7rem var(--pad) 2.5rem;
+  background: var(--paper);
+  opacity: 0;
+  visibility: hidden;
+  /* Visibility flips only once the fade has finished when closing, but has to
+     be immediate when opening — otherwise the panel is still hidden for the
+     first 150ms and focusing a link inside it silently does nothing. */
+  transition:
+    opacity 300ms var(--ease-out),
+    visibility 0s linear 300ms;
+}
+
+.erina .mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 300ms var(--ease-out),
+    visibility 0s linear 0s;
+}
+
+.erina .mobile-menu[hidden] {
+  display: none;
+}
+
+.erina .mobile-menu__nav {
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+}
+
+.erina .mobile-menu__nav a {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-block: 0.55rem;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 9vw, 3rem);
+  font-weight: 300;
+  color: var(--ink);
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 420ms var(--ease-out),
+    transform 420ms var(--ease-out);
+}
+
+.erina .mobile-menu.is-open .mobile-menu__nav a {
+  opacity: 1;
+  transform: none;
+}
+
+.erina .mobile-menu.is-open .mobile-menu__nav a:nth-child(2) {
+  transition-delay: 40ms;
+}
+
+.erina .mobile-menu.is-open .mobile-menu__nav a:nth-child(3) {
+  transition-delay: 80ms;
+}
+
+.erina .mobile-menu.is-open .mobile-menu__nav a:nth-child(4) {
+  transition-delay: 120ms;
+}
+
+.erina .mobile-menu__nav span {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+}
+
+.erina .mobile-menu__foot {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+/* The lock lives on body, so it cannot be scoped — this selector is inert
+   outside the home page because only the home page adds the class. */
+body.is-locked {
+  overflow: hidden;
+}
+
+/* ---------- hero ---------- */
+
+.erina .hero {
+  position: relative;
+  display: grid;
+  min-height: clamp(40rem, 100svh, 60rem);
+  overflow: hidden;
+  isolation: isolate;
+  background: #1b1712;
+  color: var(--cream);
+}
+
+.erina .hero__media,
+.erina .hero__veil {
+  position: absolute;
+  inset: 0;
+}
+
+.erina .hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08) translate3d(0, var(--hero-shift, 0px), 0);
+  will-change: transform;
+}
+
+/* Two gradients keep the headline legible over bright photography without
+   flattening the image: a vertical falloff, plus a softer left-to-right one. */
+.erina .hero__veil {
+  background:
+    linear-gradient(
+      180deg,
+      rgb(14 11 8 / 58%) 0%,
+      rgb(14 11 8 / 16%) 28%,
+      rgb(14 11 8 / 64%) 54%,
+      rgb(14 11 8 / 94%) 100%
+    ),
+    linear-gradient(90deg, rgb(14 11 8 / 50%) 0%, rgb(14 11 8 / 0%) 62%);
+}
+
+.erina .hero__content {
+  position: relative;
+  z-index: 2;
+  align-self: end;
+  padding-bottom: clamp(6rem, 9vw, 8.5rem);
+  display: grid;
+  gap: clamp(1.4rem, 2.4vw, 2.4rem);
+}
+
+.erina .hero__eyebrow {
+  opacity: 0;
+  animation: er-fade-up 900ms var(--ease-out) 120ms forwards;
+}
+
+.erina .hero__title {
+  max-width: 20ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6.1vw, 5.9rem);
+  font-weight: 300;
+  line-height: 0.98;
+  letter-spacing: -0.022em;
+  color: var(--cream);
+  opacity: 0;
+  animation: er-fade-up 1100ms var(--ease-out) 220ms forwards;
+}
+
+.erina .hero__title em {
+  color: #e7d7bd;
+}
+
+.erina .hero__row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2.5rem;
+  padding-top: clamp(1rem, 2vw, 1.8rem);
+  border-top: 1px solid var(--line-light);
+  opacity: 0;
+  animation: er-fade-up 1100ms var(--ease-out) 380ms forwards;
+}
+
+.erina .hero__lede {
+  max-width: 42ch;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgb(251 248 243 / 88%);
+}
+
+.erina .hero__foot {
+  position: absolute;
+  inset: auto 0 clamp(1.2rem, 2vw, 1.8rem);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgb(251 248 243 / 55%);
+}
+
+.erina .hero__scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.erina .hero__scroll i {
+  display: block;
+  width: 34px;
+  height: 1px;
+  background: currentColor;
+  animation: er-cue 2.6s var(--ease-in-out) infinite;
+  transform-origin: left;
+}
+
+@keyframes er-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes er-cue {
+  0%,
+  100% {
+    transform: scaleX(0.4);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* ---------- intro ---------- */
+
+.erina .intro {
+  border-top: 1px solid var(--line);
+}
+
+.erina .intro__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.75fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  margin-top: clamp(1.6rem, 3vw, 2.6rem);
+}
+
+.erina .intro__aside {
+  align-self: end;
+  display: grid;
+  gap: 1.2rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- section head ---------- */
+
+.erina .section-head {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.erina .section-head--split {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 2rem;
+}
+
+.erina .section-head__note {
+  max-width: 30ch;
+  font-size: 0.74rem;
+  line-height: 1.6;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* ---------- services ---------- */
+
+.erina .services {
+  background: var(--paper-2);
+}
+
+.erina .services__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 26rem);
+  gap: clamp(2rem, 6vw, 5.5rem);
+  align-items: start;
+}
+
+.erina .services__list {
+  border-top: 1px solid var(--line);
+}
+
+.erina .service {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 1fr) 1.5rem;
+  align-items: start;
+  gap: 1.2rem;
+  padding-block: clamp(1.5rem, 3vw, 2.2rem);
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  transition: background-color 300ms var(--ease-out);
+}
+
+.erina .service__num {
+  padding-top: 0.5rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+}
+
+.erina .service__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.4vw, 2.05rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--ink);
+  transition: transform 380ms var(--ease-out);
+}
+
+.erina .service__copy {
+  max-width: 40ch;
+  margin-top: 0.55rem;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.erina .service__arrow {
+  justify-self: end;
+  font-size: 1rem;
+  color: var(--muted);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    opacity 300ms var(--ease-out),
+    transform 300ms var(--ease-out);
+}
+
+.erina .service:focus-visible {
+  outline-offset: -2px;
+}
+
+.erina .service.is-active .service__arrow {
+  opacity: 1;
+  transform: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .erina .service:hover .service__title {
+    transform: translateX(8px);
+  }
+
+  .erina .service:hover .service__arrow {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.erina .services__media {
+  position: sticky;
+  top: 7rem;
+}
+
+.erina .services__frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #d9cdbb;
+}
+
+.erina .services__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.04);
+  transition:
+    opacity 600ms var(--ease-out),
+    transform 1200ms var(--ease-out);
+}
+
+.erina .services__img.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.erina .services__caption {
+  margin-top: 0.9rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- work ---------- */
+
+.erina .work {
+  background: var(--paper);
+}
+
+.erina .work__list {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 3vw, 3rem);
+}
+
+.erina .project {
+  grid-column: span 7;
+}
+
+.erina .project:nth-child(2) {
+  grid-column: 8 / -1;
+  margin-top: clamp(3rem, 8vw, 9rem);
+}
+
+.erina .project:nth-child(3) {
+  grid-column: 2 / span 8;
+}
+
+.erina .project__link {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.erina .project__media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 11;
+  background: #ddd2c2;
+}
+
+.erina .project__media--portrait {
+  aspect-ratio: 4 / 5;
+}
+
+.erina .project__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 900ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .erina .project__link:hover .project__media img {
+    transform: scale(1.04);
+  }
+
+  .erina .project__link:hover .project__name {
+    color: var(--gold);
+  }
+}
+
+.erina .project__caption {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 1rem;
+  padding-top: 0.2rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.erina .project__index {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+.erina .project__name {
+  color: var(--ink-soft);
+  transition: color 300ms var(--ease-out);
+}
+
+.erina .project__meta {
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ---------- studio ---------- */
+
+.erina .studio {
+  background: var(--paper-2);
+}
+
+.erina .studio__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 7vw, 7rem);
+  align-items: center;
+}
+
+.erina .studio__media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.erina .studio__caption {
+  margin-top: 0.9rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.erina .studio__copy {
+  display: grid;
+  gap: 1.35rem;
+  align-content: start;
+}
+
+.erina .studio__copy p:not(.label):not(.fineprint) {
+  max-width: 48ch;
+  font-size: 0.96rem;
+}
+
+.erina .materials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.8rem;
+  margin-block: 0.6rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+}
+
+.erina .materials li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.erina .materials__swatch {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--swatch);
+  box-shadow: inset 0 0 0 1px rgb(23 19 15 / 18%);
+}
+
+/* ---------- contact ---------- */
+
+.erina .contact {
+  background: #16120e;
+  color: var(--cream);
+  padding-block: clamp(5rem, 11vw, 10rem);
+  scroll-margin-top: 4rem;
+}
+
+.erina .contact__inner {
+  display: grid;
+  gap: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+.erina .contact__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6.4vw, 5.6rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.erina .contact__title em {
+  color: var(--gold);
+}
+
+.erina .contact__row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  padding-top: clamp(1.5rem, 3vw, 2.4rem);
+  border-top: 1px solid var(--line-light);
+}
+
+.erina .contact__lede {
+  max-width: 40ch;
+  font-size: 0.95rem;
+  color: rgb(251 248 243 / 72%);
+}
+
+.erina .contact__copy {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 42ch;
+}
+
+.erina .contact__details {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(251 248 243 / 55%);
+}
+
+.erina .contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* ---------- footer ---------- */
+
+.erina .site-foot {
+  padding-block: 3rem;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+}
+
+.erina .site-foot__inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: 2rem;
+}
+
+.erina .wordmark--foot {
+  color: var(--ink);
+}
+
+.erina .site-foot__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.erina .site-foot__nav a {
+  transition: color 240ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .erina .site-foot__nav a:hover {
+    color: var(--ink);
+  }
+}
+
+.erina .site-foot__meta {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: end;
+  text-align: right;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.erina .site-foot__meta a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+}
+
+/* ---------- scroll reveal ---------- */
+
+.erina .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 820ms var(--ease-out),
+    transform 820ms var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.erina .reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* No script, no observer: never hide the content. */
+@media (scripting: none) {
+  .erina .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 68rem) {
+  .erina .services__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(15rem, 19rem);
+  }
+
+  .erina .project {
+    grid-column: span 8;
+  }
+
+  .erina .project:nth-child(2) {
+    grid-column: 6 / -1;
+  }
+
+  .erina .project:nth-child(3) {
+    grid-column: 1 / span 9;
+  }
+}
+
+@media (max-width: 56rem) {
+  .erina .nav,
+  .erina .site-head__actions .link-quiet {
+    display: none;
+  }
+
+  .erina .menu-btn {
+    display: inline-flex;
+  }
+
+  .erina .site-head__actions {
+    gap: 1.1rem;
+  }
+
+  .erina .intro__body,
+  .erina .services__layout,
+  .erina .studio__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .erina .services__media {
+    position: relative;
+    top: 0;
+    order: -1;
+    max-width: 24rem;
+  }
+
+  .erina .services__frame {
+    aspect-ratio: 3 / 2;
+  }
+
+  .erina .studio__media img {
+    aspect-ratio: 16 / 10;
+  }
+
+  .erina .project,
+  .erina .project:nth-child(2),
+  .erina .project:nth-child(3) {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+
+  .erina .section-head--split {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .erina .section-head__note {
+    text-align: left;
+  }
+
+  .erina .site-foot__inner {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .erina .site-foot__meta {
+    justify-items: start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 40rem) {
+  .erina .hero {
+    min-height: 100svh;
+  }
+
+  .erina .hero__content {
+    padding-bottom: 6.5rem;
+  }
+
+  .erina .hero__row {
+    flex-direction: column;
+    align-items: start;
+    gap: 1.4rem;
+  }
+
+  .erina .hero__foot {
+    font-size: 0.54rem;
+    letter-spacing: 0.18em;
+  }
+
+  .erina .project__caption {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.4rem 0.8rem;
+    font-size: 0.68rem;
+  }
+
+  .erina .project__meta {
+    grid-column: 2;
+  }
+
+  .erina .contact__row {
+    align-items: start;
+  }
+
+  .erina .btn--wide {
+    width: 100%;
+  }
+}
+
+/* ---------- reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .erina *,
+  .erina *::before,
+  .erina *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+
+  .erina .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .erina .hero__media img {
+    transform: scale(1.02);
+  }
+}

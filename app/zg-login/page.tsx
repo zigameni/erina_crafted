@@ -16,7 +16,7 @@ export default async function AdminLoginPage({ searchParams }: PageProps<"/zg-lo
   const configured = isAuthConfigured() && isCredentialsConfigured();
 
   return (
-    <div className="relative flex min-h-screen flex-col overflow-hidden">
+    <div lang="en" className="relative flex min-h-screen flex-col overflow-hidden">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 grid-backdrop opacity-60"

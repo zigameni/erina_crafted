@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { headers } from "next/headers";
 
 import { BrandMark } from "@/components/brand-mark";
 import { SignOutButton } from "@/components/sign-out-button";
@@ -9,17 +10,22 @@ export const metadata = {
   description: "Ziga admin area.",
 };
 
-const navItems = [
-  { label: "Overview", href: "/zg-admin", active: true },
-  { label: "Content", href: "/zg-admin", active: false },
-  { label: "Settings", href: "/zg-admin", active: false },
-];
-
 export default async function AdminLayout({ children }: LayoutProps<"/zg-admin">) {
   const session = await requireAdmin();
+  // Stamped by the proxy guard, so the shell can mark the current section
+  // without becoming a client component.
+  const pathname = (await headers()).get("x-admin-path") ?? "/zg-admin";
+  const onContent = pathname.startsWith("/zg-admin/content");
+  const section = onContent ? "Content" : "Overview";
+
+  const navItems = [
+    { label: "Overview", href: "/zg-admin", active: !onContent, soon: false },
+    { label: "Content", href: "/zg-admin/content", active: onContent, soon: false },
+    { label: "Settings", href: "/zg-admin", active: false, soon: true },
+  ];
 
   return (
-    <div className="flex min-h-screen flex-col lg:flex-row">
+    <div lang="en" className="flex min-h-screen flex-col lg:flex-row">
       <aside className="border-b border-line-soft bg-surface/60 lg:min-h-screen lg:w-64 lg:shrink-0 lg:border-r lg:border-b-0">
         <div className="flex items-center justify-between px-5 py-5 lg:block">
           <Link href="/" className="flex items-center gap-3">
@@ -51,7 +57,7 @@ export default async function AdminLayout({ children }: LayoutProps<"/zg-admin">
               }`}
             >
               <span>{item.label}</span>
-              {!item.active && (
+              {item.soon && (
                 <span className="ml-3 hidden text-[9px] tracking-[0.16em] text-muted/50 uppercase lg:inline">
                   soon
                 </span>
@@ -79,7 +85,7 @@ export default async function AdminLayout({ children }: LayoutProps<"/zg-admin">
             <span aria-hidden className="text-muted/40">
               /
             </span>
-            <span className="text-cream">Overview</span>
+            <span className="text-cream">{section}</span>
           </div>
 
           <div className="flex items-center gap-3">

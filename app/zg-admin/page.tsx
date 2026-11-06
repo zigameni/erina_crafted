@@ -133,7 +133,7 @@ export default async function AdminOverviewPage() {
             <h2 className="text-sm font-semibold text-cream">Next steps</h2>
             <ol className="mt-4 space-y-3 text-sm text-muted">
               <NextStep index="01" text="Replace the starter credentials with real ones." />
-              <NextStep index="02" text="Add your first content model to this dashboard." />
+              <NextStep index="02" text="Edit the site's copy, images and contact details under Content." />
               <NextStep index="03" text="Persist data in a database and scope it per admin." />
             </ol>
           </section>

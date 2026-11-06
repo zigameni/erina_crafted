@@ -1,48 +1,23 @@
 # Current Project Context
-## Objective    — Reusable Next.js base (now branded "Ziga"): public home, JWT-protected admin dashboard, admin login — packaged as a template for other projects.
+## Objective    — The Erina Crafted site is bilingual with Albanian as the default language at `/` and English at `/en`; every string and image lives in `content/site.<locale>.json`, and the admin panel edits all of it at `/zg-admin/content`.
 ## Previous Work
-- Summary: Built the Next.js 16 app with home page, /zg-login, JWT-guarded /zg-admin, auth APIs and proxy guard; verified build, lint and the full auth flow.
-- Archive:  conversation_archive/2026-11-06_nextjs-auth-base.md
-## In Progress  — (none) Rebrand + template export complete.
-## Completed    — Brand renamed erina → ziga everywhere (copy, cookie, issuer, package name, README, env). Project copied to workspace/templates/nextjs_home_login_dashboard with a fresh JWT_SECRET.
-## Pending      — Register the template folder in whatever workflow the user uses for new projects; possible git init for the template copy.
-## Decisions    — Placeholder brand is "ziga" until a real product name exists; no "erina" string may remain anywhere. Template copy excludes node_modules, .next, dev logs and this project's conversation log/archive.
-## Constraints — AGENTS.md: log kept current; no AI attribution in commits. Auth modules stay dependency-light (jose + Web APIs only) so they can be lifted into other apps.
-## Problems     — In-memory login throttle is per-process (fine for local, needs shared store when scaled).
+- Summary: Concept 01 was ported into Next.js, then made bilingual (English at `/`, Albanian at `/sq`) with every string, image and contact field moved into validated per-language JSON and editable from `/zg-admin/content`, including image thumbnails and real uploads stored in `public/uploads`.
+- Archive:  conversation_archive/2026-11-06_albanian-default.md  (earlier: `2026-11-06_i18n-content-editor.md`, `2026-11-06_design-direction-chosen.md`, `2026-11-06_ziga-base-git.md`, `2026-11-06_nextjs-auth-base.md`)
+## In Progress  — Switching the default language to Albanian (`/` = sq, `/en` = English).
+## Completed    — (previous feature complete — see the archive)
+## Pending      — Real copy, real photography, real contact details; mobile-menu labelling; a commit.
+## Decisions    — Content model is a validated JSON document per locale, so a language is one file plus one route. The editor submits the whole document as JSON to a server action that re-validates before writing; writes go through a temp file + rename. Uploads live in `public/uploads`, one file per language and image spot.
+## Constraints — No invented projects, locations or credentials: placeholders stay flagged in the copy. Never read or print `.env.local`. No AI attribution in commits.
+## Problems     — This browser reports `prefers-reduced-motion: reduce`, so parallax and the reveal cascade remain verified only on their no-motion path.
 
----
-
-## 2026-11-06 12:50
+## 2026-11-06 22:40
 ### USER
-We saved the template for the initial website — let's continue. Initialise this project with git.
+Make Albanian the default language.
 
 ### ASSISTANT
-- `git init -b main` in the workspace; committed 34 files as `826b24f Initial commit: Next.js base with home page, JWT admin login and guarded dashboard.` (no AI attribution, per AGENTS.md).
-- Identity used: the existing global config (zigmaeni <shehu.meni@gmail.com>).
-- `.gitignore`: added `.freebuff/` (agent marker) and `!.env.example`, because the existing `.env*` rule was silently excluding the env template the README points at. Staged and amended into the initial commit.
-- Confirmed `.env.local`, `dev.log`, `node_modules` and `.next` are ignored; working tree clean on `main`.
-- Synced the same `.gitignore` fix into `templates/nextjs_home_login_dashboard`.
-- Next: continue feature work on the now-versioned base.
-
----
-
-## 2026-11-06 13:05
-### USER
-Before we continue, turn off the running server.
-
-### ASSISTANT
-- Stopped the dev server (PID 9600 + child 3420) serving http://localhost:56945; port confirmed closed and requests no longer answered.
-- Restart when needed with `bun run dev`; it picks a free port and logs to `dev.log`.
-
----
-
-## 2026-11-06 12:20
-### USER
-This is a template — remove "erina" everywhere and use "ziga" instead. Also copy the whole project to C:\Users\Administrator\Desktop\workspace\templates\nextjs_home_login_dashboard so it can be reused in other projects.
-
-### ASSISTANT
-- Renamed brand across source, docs and config: page copy, metadata titles, `SESSION_COOKIE` → `ziga_admin_session`, `SESSION_ISSUER` → `ziga-admin`, package name `ziga-crafted`, README, dev password.
-- `grep -ri erina` now returns zero matches in the project and in the exported copy.
-- Rebuilt: `bun install` (lockfile name synced) + `next build` pass; dev server restarted on the new env, old password → 401, new password → 200, `/zg-admin` renders with the renamed cookie.
-- Exported to `templates/nextjs_home_login_dashboard` (244 KB, no node_modules/.next/logs, own `.env.local` with a fresh JWT_SECRET, credentials admin / ziga-admin); `diff -rq` against the source shows an exact match apart from the excluded files.
-- Next: use the folder as the starting point for new apps.
+- Albanian now serves the root: `DEFAULT_LOCALE` is `"sq"`, `app/page.tsx` renders the Albanian document, and English moved from `/sq` to `/en` (`app/en/page.tsx`).
+- Added `LOCALE_PATHS` to `lib/content.ts` so canonicals, `hreflang` alternates, the editor's preview link, the language tabs and `revalidatePath` all take paths from one place. The language switch hrefs swapped in both content files (`sq` → `/en`, `en` → `/`), and `next.config.ts` permanently redirects the old `/sq` to `/`.
+- Admin editor: the default tab is Shqip at `/` and English at `/en`; the save action maps any non-`en` value to the default locale and revalidates both pages. `<html lang>` is now `sq`, with `lang="en"` on the admin and sign-in shells because that UI stays English.
+- Verified: `/` renders Albanian — `lang="sq"`, Albanian title, canonical `/`, alternates sq `/` and en `/en`, header switch to `/en` labelled English; `/en` renders English with the mirrored metadata and a switch back to `/` labelled Shqip; `/sq` → 308 to `/`; anonymous `/zg-admin/content` still 307s to sign-in; saved both documents from the editor, each wrote its own JSON file and redirected to `?lang=<locale>&saved=1`; `bun run lint` and `bun run build` clean with routes `/` and `/en`.
+- Not verified: nothing new is unverified beyond the standing reduced-motion caveat.
+- Next: real copy and photography, then a commit.
