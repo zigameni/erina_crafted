@@ -12,6 +12,20 @@
 
 ---
 
+## 2026-11-06 12:50
+### USER
+We saved the template for the initial website — let's continue. Initialise this project with git.
+
+### ASSISTANT
+- `git init -b main` in the workspace; committed 34 files as `826b24f Initial commit: Next.js base with home page, JWT admin login and guarded dashboard.` (no AI attribution, per AGENTS.md).
+- Identity used: the existing global config (zigmaeni <shehu.meni@gmail.com>).
+- `.gitignore`: added `.freebuff/` (agent marker) and `!.env.example`, because the existing `.env*` rule was silently excluding the env template the README points at. Staged and amended into the initial commit.
+- Confirmed `.env.local`, `dev.log`, `node_modules` and `.next` are ignored; working tree clean on `main`.
+- Synced the same `.gitignore` fix into `templates/nextjs_home_login_dashboard`.
+- Next: continue feature work on the now-versioned base.
+
+---
+
 ## 2026-11-06 12:20
 ### USER
 This is a template — remove "erina" everywhere and use "ziga" instead. Also copy the whole project to C:\Users\Administrator\Desktop\workspace\templates\nextjs_home_login_dashboard so it can be reused in other projects.
