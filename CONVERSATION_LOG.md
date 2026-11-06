@@ -26,6 +26,16 @@ We saved the template for the initial website — let's continue. Initialise thi
 
 ---
 
+## 2026-11-06 13:05
+### USER
+Before we continue, turn off the running server.
+
+### ASSISTANT
+- Stopped the dev server (PID 9600 + child 3420) serving http://localhost:56945; port confirmed closed and requests no longer answered.
+- Restart when needed with `bun run dev`; it picks a free port and logs to `dev.log`.
+
+---
+
 ## 2026-11-06 12:20
 ### USER
 This is a template — remove "erina" everywhere and use "ziga" instead. Also copy the whole project to C:\Users\Administrator\Desktop\workspace\templates\nextjs_home_login_dashboard so it can be reused in other projects.
