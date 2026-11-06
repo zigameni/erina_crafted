@@ -31,3 +31,13 @@ Commit the bilingual site, admin content editor and Albanian-default routing; no
 - Message body carries only the user's configured identity — no trailers or attribution, per AGENTS.md.
 - `prototypes/` was deliberately left untracked (design explorations, not shipped code); `.env.local` and `public/uploads/` are untracked.
 - Next: decide whether the prototypes belong in the repo, then real copy and photography.
+
+## 2026-11-07 00:05
+### USER
+Add the GitHub remote for zigameni/erina_crafted, but over SSH so the credential manager isn't used.
+
+### ASSISTANT
+- `git remote add origin https://…` first failed — Git Credential Manager popped a dialog that was cancelled and there was no TTY for a username prompt. No credential was stored.
+- Switched the remote to `git@github.com:zigameni/erina_crafted.git`; the existing `~/.ssh/id_ed25519` authenticates as `zigameni`, so `git push -u origin main` published both commits (`abe4589`, `cf81bd5`).
+- `main` now tracks `origin/main`, and local HEAD matches it. Only `prototypes/` remains untracked.
+- Next: decide on prototypes, then real copy and photography.
